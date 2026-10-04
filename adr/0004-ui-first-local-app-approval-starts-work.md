@@ -155,9 +155,14 @@ who also work in Claude Code directly, is optional and left for a later ADR.
 - **Using the user's claude.ai login:** not allowed for third-party products
   without Anthropic's approval.
 
+## Resolved questions
+
+- **Subscription login:** Hoshen will ask Anthropic for approval to offer
+  claude.ai login, so subscription users can use it (owner, 2026-10-04). Until
+  approval is granted, API key authentication only. Asking is the owner's
+  action, outside the codebase.
+
 ## Open questions
 
-- Should Hoshen ask Anthropic for approval to offer claude.ai login later,
-  so subscription users can use it?
 - Run permissions: which tools a run may use by default (shell, network), and
   whether the user can change that per project.

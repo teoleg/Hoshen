@@ -11,3 +11,4 @@ Constraints currently in force: [CONSTRAINTS.md](CONSTRAINTS.md).
 | [ADR-0002](0002-adr-index-and-shared-constraints.md) | Generated ADR index and shared constraints loaded into every Claude session | approved | 2026-10-04 | amends ADR-0001; depends on ADR-0001 | 3 |
 | [ADR-0003](0003-plugin-first-distribution-and-local-ui.md) | Hoshen ships as a Claude Code plugin with a local web UI | approved | 2026-10-04 | depends on ADR-0001, ADR-0002 | 4 |
 | [ADR-0004](0004-ui-first-local-app-approval-starts-work.md) | Hoshen is a local UI-first app where approving an ADR starts the work | proposed | 2026-10-04 | supersedes ADR-0003; depends on ADR-0001, ADR-0002 | 6 |
+| [ADR-0005](0005-full-adr-text-in-claude-context.md) | The full text of ADRs in force is loaded into every Claude session | proposed | 2026-10-04 | amends ADR-0002; depends on ADR-0002 | 2 |
