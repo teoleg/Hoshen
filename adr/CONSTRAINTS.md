@@ -18,3 +18,10 @@ Follow them in all work. Each one links to the ADR that explains it.
 - **ADR-0002.C1** Declare each constraint in the frontmatter of the ADR that imposes it, with an id ADR-NNNN.Cn that is never reused.
 - **ADR-0002.C2** Never edit adr/README.md or adr/CONSTRAINTS.md by hand; regenerate them with node tools/adr.mjs generate.
 - **ADR-0002.C3** After changing any ADR, run node tools/adr.mjs check and commit only when it passes.
+
+## [ADR-0003](0003-plugin-first-distribution-and-local-ui.md): Hoshen ships as a Claude Code plugin with a local web UI
+
+- **ADR-0003.C1** Hoshen v1 is a Claude Code plugin; the user's own Claude Code session does the agent work, so do not build a server that runs agents.
+- **ADR-0003.C2** The UI reads and writes ADR files in the project's repository and keeps no other store of ADR state.
+- **ADR-0003.C3** Every ADR change made through the UI or the plugin passes the same validation as node tools/adr.mjs check before it is written.
+- **ADR-0003.C4** The local UI server listens on 127.0.0.1 only.
