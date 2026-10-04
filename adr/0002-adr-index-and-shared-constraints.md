@@ -1,17 +1,28 @@
 ---
 id: ADR-0002
 title: Generated ADR index and shared constraints loaded into every Claude session
-status: proposed
+status: approved
 date: 2026-10-04
 deciders: [teoleg]
 supersedes: []
 amends: [ADR-0001]
 depends_on: [ADR-0001]
+constraints:
+  - id: ADR-0002.C1
+    rule: Declare each constraint in the frontmatter of the ADR that imposes it, with an id ADR-NNNN.Cn that is never reused.
+  - id: ADR-0002.C2
+    rule: Never edit adr/README.md or adr/CONSTRAINTS.md by hand; regenerate them with node tools/adr.mjs generate.
+  - id: ADR-0002.C3
+    rule: After changing any ADR, run node tools/adr.mjs check and commit only when it passes.
 history:
   - status: proposed
     date: 2026-10-04
     by: claude
     reason: Drafted from the owner's request for an ADR table and a shared constraints file.
+  - status: approved
+    date: 2026-10-04
+    by: teoleg
+    reason: Approved by the owner, including that constraints of suspended ADRs are not in force.
 ---
 
 # ADR-0002: Generated ADR index and shared constraints loaded into every Claude session
@@ -104,7 +115,9 @@ compaction, without repeating them on each message.
 - **Path-scoped `.claude/rules/` files from the start:** useful once there are
   many constraints tied to parts of the code. Premature with two ADRs.
 
-## Open questions
+## Resolved questions
 
-- Should constraints of a `suspended` ADR stay in force while it is paused?
-  This ADR says no.
+- Constraints of a `suspended` ADR are not in force while it is paused
+  (owner, 2026-10-04).
+- Until the stack ADR exists, the generator is plain Node with no
+  dependencies, so it does not wait on that decision.

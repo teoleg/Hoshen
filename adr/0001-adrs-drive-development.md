@@ -7,6 +7,17 @@ deciders: [teoleg]
 supersedes: []
 amends: []
 depends_on: []
+constraints:
+  - id: ADR-0001.C1
+    rule: Start implementation work only from an ADR whose status is approved.
+  - id: ADR-0001.C2
+    rule: Agents may draft ADRs only as proposed and never approve, reject, suspend or resume one.
+  - id: ADR-0001.C3
+    rule: Never edit a completed or rejected ADR in substance; record a change of mind as a new ADR that supersedes or amends it.
+  - id: ADR-0001.C4
+    rule: Never set an ADR to completed by hand; the system sets it once the ADR's work is merged and its checks pass.
+  - id: ADR-0001.C5
+    rule: Record every status change in the ADR's history (status, date, by, reason) and refuse transitions ADR-0001 does not allow.
 history:
   - status: proposed
     date: 2026-10-04
